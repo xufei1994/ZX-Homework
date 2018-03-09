@@ -1,8 +1,6 @@
 package cn.xf.learn.domin.newHomework;
 
 import cn.xf.learn.domin.BookDO;
-import cn.xf.learn.homework.Book;
-import cn.xf.learn.homework.Library;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -20,7 +18,7 @@ public class TotalDataMethod {
     BookDO bookDO=new BookDO();
 
 
-    void totalMethod() throws IOException {
+   public  void totalMethod() throws IOException {
         ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
         SpringTest springTest = (SpringTest) context.getBean("springTest");
         BookDO bookDO = new BookDO();

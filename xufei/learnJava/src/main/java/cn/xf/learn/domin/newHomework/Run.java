@@ -16,5 +16,6 @@ public class Run {
         bookDO.setAuthor("author");
         bookDO.setCatalogue("catalogue");
         bookDO.setIntroduction("introduction");
+
     }
 }

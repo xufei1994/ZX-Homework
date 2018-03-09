@@ -1,12 +1,16 @@
 package cn.xf.learn.domin;
 
+import cn.xf.learn.domin.newHomework.SpringTest;
+import cn.xf.learn.domin.newHomework.TotalDataMethod;
+
+import java.io.IOException;
 import java.sql.*;
 
 /**
  * Created by xufei on 18-1-24
  */
 public class Test {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
         String URL = "jdbc:mysql://127.0.0.1:3306/library?" +
                 "useUnicode=true&useSSL=false";
         String USER = "root";
@@ -32,6 +36,9 @@ public class Test {
                     " " + resultSet.getString("introduction") + "\t");
 
         }
+        TotalDataMethod totalDataMethod= new TotalDataMethod();
+        System.out.println("我已执行");
+
 
         //关闭资源
         resultSet.close();
