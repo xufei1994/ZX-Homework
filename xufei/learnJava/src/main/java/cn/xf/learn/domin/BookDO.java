@@ -1,8 +1,14 @@
 package cn.xf.learn.domin;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BookDO {
     /**
      * 
@@ -28,4 +34,9 @@ public class BookDO {
      * 
      */
     private String introduction;
+
+    /**
+     * 
+     */
+    private Integer mac;
 }

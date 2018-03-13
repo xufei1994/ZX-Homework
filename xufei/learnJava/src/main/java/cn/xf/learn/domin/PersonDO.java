@@ -1,118 +1,57 @@
 package cn.xf.learn.domin;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.regex.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/**
- * Created by xufei on 18-3-8
- */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PersonDO {
-    private String readerName;  //借书人姓名
+    /**
+     * 无用序列号
+     */
+    private Integer id;
 
-    private int readerAge;     // 借书人年龄
+    /**
+     * 学生姓名
+     */
+    private String stuName;
 
-    private String readerSex;  //借书人性别
+    /**
+     * 学生学号
+     */
+    private Integer stuNumber;
 
-    private String readerType;    //借书人类型   老师  学生 其他
+    /**
+     * 学生年龄
+     */
+    private Integer stuAge;
 
-    private int readerStudentId;  //学生号
+    /**
+     * 学生性别
+     */
+    private String stuSex;
 
-    private int readerTeacherId;   //教师号
+    /**
+     * 学生类别
+     */
+    private Byte stuType;
 
-    private int readerOtherId;    //借书号   不一定有，  只针对于其他无工
+    /**
+     * 联系电话
+     */
+    private Integer stuTel;
 
-    private String readerId;   //身份证号码
+    /**
+     * 借书数量
+     */
+    private Byte stuBook;
 
-    PersonDO(int readerOtherId,String readerName,int readerAge,String readerSex,
-             String readerType,String readerId){
-     setReaderOtherId(readerOtherId);
-     setReaderName(readerName);
-     setReaderAge(readerAge);
-     setReaderSex(readerSex);
-     setReaderType(readerType);
-     setReaderId(readerId);
-
-
-    }
-
-
-
-
-    public String getReaderName() {
-        return readerName;
-    }
-
-    public void setReaderName(String readerName) {
-        this.readerName = readerName;
-    }
-
-    public int getReaderAge() {
-        return readerAge;
-    }
-
-    public void setReaderAge(int readerAge) {
-        this.readerAge = readerAge;
-    }
-
-    public String getReaderSex() {
-        return readerSex;
-    }
-
-    public void setReaderSex(String readerSex) {
-        this.readerSex = readerSex;
-    }
-
-    public String getReaderType() {
-        return readerType;
-    }
-
-    public void setReaderType(String readerType) {
-        this.readerType = readerType;
-    }
-
-    public int getReaderStudentId() {
-        return readerStudentId;
-    }
-
-    public void setReaderStudentId(int readerStudentId) {
-        this.readerStudentId = readerStudentId;
-    }
-
-    public int getReaderTeacherId() {
-        return readerTeacherId;
-    }
-
-    public void setReaderTeacherId(int readerTeacherId) {
-        this.readerTeacherId = readerTeacherId;
-    }
-
-    public int getReaderOtherId() {
-        return readerOtherId;
-    }
-
-    public void setReaderOtherId(int readerOtherId) {
-        this.readerOtherId = readerOtherId;
-    }
-
-    public String getReaderId() {
-        return readerId;
-    }
-
-    public void setReaderId(String readerId) {
-        this.readerId = readerId;
-    }
-
-
-    private char readerPassword;
-
-    private BookDO readerbookDO;
-
-
-
-
-
-
-
-
+    /**
+     * 不良记录
+     */
+    private String stuFine;
 }

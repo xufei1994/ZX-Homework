@@ -65,6 +65,20 @@
         <table schema="" tableName="book" domainObjectName="BookDO">
             <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>
+
+        <table schema="" tableName="person" domainObjectName="PersonDO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="recorder" domainObjectName="RecorderDO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="stroage" domainObjectName="StroageDO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+
     </context>
 
 

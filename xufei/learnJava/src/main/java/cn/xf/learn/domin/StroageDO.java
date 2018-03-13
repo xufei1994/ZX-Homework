@@ -1,19 +1,38 @@
 package cn.xf.learn.domin;
 
-/**
- * Created by xufei on 18-3-8
- */
+import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class StroageDO {
-    public String sort;
-    public int maxNumber;
+    /**
+     * 无用序列
+     */
+    private Long id;
 
-    public long totalNumber;
+    /**
+     * 具体位置
+     */
+    private String sLocation;
 
-    public BookDO borrowedBook;
+    /**
+     * 是否存在
+     */
+    private Byte sExist;
 
-    public ManangerDO manangerDO;
+    /**
+     * 书名
+     */
+    private String sName;
 
-
-
-
+    /**
+     * 购买时间
+     */
+    private Date sDate;
 }
