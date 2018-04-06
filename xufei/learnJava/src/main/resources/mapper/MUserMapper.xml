@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lgw.learn.mapper.MUserMapper">
+  <resultMap id="BaseResultMap" type="cn.lgw.learn.domain.UserDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="stu_id" jdbcType="VARCHAR" property="stuId" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="school" jdbcType="INTEGER" property="school" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="borrow_amount" jdbcType="INTEGER" property="borrowAmount" />
+    <result column="can_borrow_amount" jdbcType="INTEGER" property="canBorrowAmount" />
+  </resultMap>
+
+  <resultMap id="GeneralResultMap" type="cn.lgw.learn.to.resp.GeneralUserTO">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="school" jdbcType="INTEGER" property="school" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, name, user_id, stu_id, username, password, sex, school, grade, phone, status,
+    borrow_amount, can_borrow_amount
+  </sql>
+
+  <select id="selectGeneralByExample" parameterType="cn.lgw.learn.domain.condition.UserCondition" resultMap="GeneralResultMap">
+
+    select
+    <if test="distinct">
+      distinct
+    </if>
+      user_id, name, sex, school, grade
+    from user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      limit  ${limit}
+    </if>
+  </select>
+
+</mapper>
